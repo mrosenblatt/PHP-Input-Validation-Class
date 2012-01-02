@@ -1,8 +1,9 @@
 <?php
 
 // Input Validation Class
-// Version 1.00.00
+// Version 1.00.01
 // Property of Fliptel LLC. Copyright 2011. 
+// This class may NOT be used without written and signed permission.
 // Written and maintained by Matthew Rosenblatt
 
 class Validate{
@@ -45,16 +46,16 @@ class Validate{
 			if(array_key_exists($required['field'],$this->input)){
 				
 				if(empty($this->input[$required['field']])){
-					$missing[$count]['field'] = $required['field'];
-					$missing[$count]['error'] = $required['error'];					  
+					$missing[$required['field']]['field'] = $required['field'];
+					$missing[$required['field']]['message'] = $required['error'];					  
 				} else {
-					$matches[$count]['field'] = $required['field'];
+					$matches[$required['field']]['field'] = $required['field'];
 				}
 				
 			} else {
 				
-				$missing[$count]['field'] = $required['field'];
-				$missing[$count]['error'] = $required['error'];
+				$missing[$required['field']]['field'] = $required['field'];
+				$missing[$required['field']]['message'] = $required['error'];
 				
 			}
 			
@@ -111,7 +112,7 @@ class Validate{
 									// Add an entry into Errors.
 									$ec = count($errors[$count])+1;	
 									$errors[$key['field']][$sCount]['field'] = $key['field'];
-									$errors[$key['field']][$sCount]['error'] = $result['error'];
+									$errors[$key['field']][$sCount]['message'] = $result['error'];
 									
 								}
 								
@@ -119,7 +120,7 @@ class Validate{
 								
 								$ec = count($errors[$count])+1;	
 								$errors[$key['field']][$sCount]['field'] = $key['field'];
-								$errors[$key['field']][$sCount]['error'] = "FATAL ERROR: FUNCTION DOESN'T EXIST WITHIN VALIDATION CLASS ({$check})!";
+								$errors[$key['field']][$sCount]['message'] = "FATAL ERROR: FUNCTION DOESN'T EXIST WITHIN VALIDATION CLASS ({$check})!";
 								
 							}
 							
