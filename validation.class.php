@@ -1,7 +1,7 @@
 <?php
 
 // Input Validation Class
-// Version 1.00.01
+// Version 1.00.00
 // Property of Fliptel LLC. Copyright 2011. 
 // This class may NOT be used without written and signed permission.
 // Written and maintained by Matthew Rosenblatt
@@ -111,16 +111,16 @@ class Validate{
 									
 									// Add an entry into Errors.
 									$ec = count($errors[$count])+1;	
-									$errors[$key['field']][$sCount]['field'] = $key['field'];
-									$errors[$key['field']][$sCount]['message'] = $result['error'];
+									$errors[$key['field']]['field'] = $key['field'];
+									$errors[$key['field']]['message'] = $result['error'];
 									
 								}
 								
 							} else {
 								
 								$ec = count($errors[$count])+1;	
-								$errors[$key['field']][$sCount]['field'] = $key['field'];
-								$errors[$key['field']][$sCount]['message'] = "FATAL ERROR: FUNCTION DOESN'T EXIST WITHIN VALIDATION CLASS ({$check})!";
+								$errors[$key['field']]['field'] = $key['field'];
+								$errors[$key['field']]['message'] = "FATAL ERROR: FUNCTION DOESN'T EXIST WITHIN VALIDATION CLASS ({$check})!";
 								
 							}
 							
@@ -154,8 +154,8 @@ class Validate{
 								
 								$ec = count($errors[$count])+1;								
 								// Add an entry into Errors.
-								$errors[$key['field']][$ec]['field'] = $key['field'];
-								$errors[$key['field']][$ec]['error'] = $result['error'];
+								$errors[$key['field']]['field'] = $key['field'];
+								$errors[$key['field']]['message'] = $result['error'];
 								
 							}
 							
@@ -163,8 +163,8 @@ class Validate{
 							
 								$ec = count($errors[$count])+1;								
 								// Add an entry into Errors.
-								$errors[$key['field']][$ec]['field'] = $key['field'];
-								$errors[$key['field']][$ec]['error'] = "FATAL ERROR: FUNCTION DOESN'T EXIST WITHIN VALIDATION CLASS ({$check})!";
+								$errors[$key['field']]['field'] = $key['field'];
+								$errors[$key['field']]['message'] = "FATAL ERROR: FUNCTION DOESN'T EXIST WITHIN VALIDATION CLASS ({$check})!";
 							
 						}
 						
