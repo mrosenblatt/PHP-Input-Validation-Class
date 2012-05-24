@@ -1,7 +1,7 @@
 <?php
 
 // Input Validation Class
-// Version 1.00.00
+// Version 1.10.00
 // Property of Fliptel LLC. Copyright 2011. 
 // This class may NOT be used without written and signed permission.
 // Written and maintained by Matthew Rosenblatt
